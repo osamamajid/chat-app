@@ -1,95 +1,66 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+ 
 
-import '../StoryPage.dart';
-import '../pages/camera.dart';
-import '../pages/chatpage.dart';
-import '../pages/countactcall.dart';
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+class ChatApp extends StatelessWidget {
   @override
-  _HomePageState createState() => _HomePageState();
-
-}
-
-class _HomePageState extends State<HomePage> {
-  final items = const [
-    Icon(Icons.chat, size: 30, color: Colors.white,),
-    Icon(Icons.camera_alt, size: 50,color: Colors.white,),
-    Icon(Icons.call, size: 30,color: Colors.white,),
-
-  ];
-
-  int index = 0;
-
-  void _openStory() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const StoryPage(),
-      ),
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: ChatScreen(),
     );
   }
+}
 
-  final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
-
-  void _onTabTapped(int selectedIndex) {
-    setState(() {
-      index = selectedIndex;
-    });
-  }
-
+class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        title: Text('S T O R I E S'),
-        actions: const [Row(
-          children: [
-
-          ],
-        )],
-      ),
-
-      bottomNavigationBar: CurvedNavigationBar(
-        key: _bottomNavigationKey,
-        index: index,
-        height: 60.0,
-        items: const <Widget>[
-          Icon(Icons.chat, size: 30, color: Colors.white),
-          Icon(Icons.camera_alt, size: 30, color: Colors.white),
-          Icon(Icons.call, size: 30, color: Colors.white),
+        title: Text("Chats"),
+        backgroundColor: Colors.green,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Icon(Icons.search),
+          )
         ],
-        color: Colors.lightBlue,
-        buttonBackgroundColor: Colors.lightBlue,
-        backgroundColor: Colors.white,
-        animationCurve: Curves.easeInOut,
-        animationDuration: const Duration(milliseconds: 600),
-        onTap: _onTabTapped,
       ),
-      body: getSelectedWidget(index: index),
+      body: ListView(
+        children: [
+          chatItem("Jenny Wilson", "Hope you are doing well...", "3m ago"),
+          chatItem("Esther Howard", "Hello Abdullah! I am...", "8m ago"),
+          chatItem("Ralph Edwards", "Do you have updates?", "5d ago"),
+          chatItem("Jacob Jones", "You're welcome :)", "5d ago"),
+          chatItem("Albert Flores", "Thanks", "6d ago"),
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.chat), label: "Chats"),
+          BottomNavigationBarItem(icon: Icon(Icons.people), label: "People"),
+          BottomNavigationBarItem(icon: Icon(Icons.call), label: "Calls"),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.message),
+        backgroundColor: Colors.green,
+      ),
     );
   }
 
-  Widget getSelectedWidget({required int index}) {
-    Widget widget;
-    switch (index) {
-      case 0:
-        widget = ChatScreen();
-        break;
-      case 1:
-        widget = const CameraExampleHome();
-        break;
-      case 2:
-        widget = const Callrom();
-        break;
-      default:
-        widget = const CameraExampleHome();
-        break;
-    }
-    return widget;
+  Widget chatItem(String name, String message, String time) {
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundImage: AssetImage('assets/avatar.png'), // صورة افتراضية
+      ),
+      title: Text(name),
+      subtitle: Text(message),
+      trailing: Text(time),
+      onTap: () {
+        // فتح شاشة الدردشة
+      },
+    );
   }
 }
