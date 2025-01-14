@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'active_user.dart';
+import 'massanger.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -48,7 +50,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ],
         bottom: TabBar(
           controller: _tabController, // Attach TabController
-          tabs: [
+          tabs: const [
             Tab(
               text: "Recent Messages",
             ),
@@ -68,7 +70,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
         ),
         hoverColor: const Color.fromARGB(220, 53, 201, 102),
         onPressed: () {
-          // Add your onPressed code here!
+         Get.toNamed("/massanger");
         },
         backgroundColor: const Color.fromARGB(255, 26, 160, 93),
         child: const Padding(
@@ -116,7 +118,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             child: SizedBox(
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
-              child: Column(
+              child: const Column(
                 children: <Widget>[
                   // You can add widgets here to show active users
                 ],

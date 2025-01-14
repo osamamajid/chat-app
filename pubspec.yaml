@@ -1,0 +1,19 @@
+name: uichatapp
+description: A new Flutter chat application
+version: 1.0.0+1
+
+environment:
+  sdk: "^3.5.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  get: ^4.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
