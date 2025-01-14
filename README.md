@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # uichatapp
 
 A new Flutter project.
+=======
+# chatcal
+
+"A new Flutter project."
+>>>>>>> 88397c4dfa15043acf998f4d9d1f958fedd16f47
 
 ## Getting Started
 

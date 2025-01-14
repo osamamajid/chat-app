@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,10 +11,27 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+=======
+import 'package:chatcal/uipages/homepage.dart';
+import 'package:flutter/material.dart';
+
+
+void main() {
+  runApp(    MyApp());
+
+}
+void initState(){
+
+}
+
+class MyApp extends StatelessWidget {
+    const MyApp({super.key});
+>>>>>>> 88397c4dfa15043acf998f4d9d1f958fedd16f47
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -40,3 +58,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
+=======
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home:   ChatApp()
+    );
+  }
+}
+>>>>>>> 88397c4dfa15043acf998f4d9d1f958fedd16f47

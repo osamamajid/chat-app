@@ -1,11 +1,20 @@
 {
+<<<<<<< HEAD
     "name": "uichatapp",
     "short_name": "uichatapp",
+=======
+    "name": "chatcal",
+    "short_name": "chatcal",
+>>>>>>> 88397c4dfa15043acf998f4d9d1f958fedd16f47
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
+<<<<<<< HEAD
     "description": "A new Flutter project.",
+=======
+    "description": ""A new Flutter project."",
+>>>>>>> 88397c4dfa15043acf998f4d9d1f958fedd16f47
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

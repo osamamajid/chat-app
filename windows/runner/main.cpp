@@ -27,7 +27,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prev,
   FlutterWindow window(project);
   Win32Window::Point origin(10, 10);
   Win32Window::Size size(1280, 720);
+<<<<<<< HEAD
   if (!window.Create(L"uichatapp", origin, size)) {
+=======
+  if (!window.Create(L"chatcal", origin, size)) {
+>>>>>>> 88397c4dfa15043acf998f4d9d1f958fedd16f47
     return EXIT_FAILURE;
   }
   window.SetQuitOnClose(true);

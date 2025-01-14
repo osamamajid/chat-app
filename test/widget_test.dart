@@ -8,7 +8,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+<<<<<<< HEAD
 import 'package:uichatapp/main.dart';
+=======
+import 'package:chatcal/main.dart';
+>>>>>>> 88397c4dfa15043acf998f4d9d1f958fedd16f47
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
